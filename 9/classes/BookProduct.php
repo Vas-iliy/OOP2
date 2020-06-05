@@ -9,12 +9,14 @@ class BookProduct extends Product
     {
         parent::__construct($name, $price);
         $this->numPages = $numPages;
+        $this->setDiscount(5);
     }
 
     public function getProduct()
     {
         $out = parent::getProduct();
-        $out .= "Кол-во страниц: {$this->numPages}<br>";
+        $out .= "Кол-во страниц: {$this->numPages}<br>
+                   Цена без скидки: {$this->price}<br>";
 
         return $out;
     }
